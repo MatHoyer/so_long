@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_player.c                                      :+:      :+:    :+:   */
+/*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 13:13:15 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 18:20:43 by mhoyer           ###   ########.fr       */
+/*   Created: 2023/06/02 18:35:40 by mhoyer            #+#    #+#             */
+/*   Updated: 2023/06/02 18:56:53 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	init_player(t_game *game)
+int	check_input(int key, t_game *game)
 {
-	int	x;
-	int	y;
-
-	y = -1;
-	while (game->map.mat[++y])
+	if (key == XK_w || key == XK_s
+		|| key == XK_d || key == XK_a)
 	{
-		x = -1;
-		while (game->map.mat[y][++x])
-		{
-			if (game->map.mat[y][x] == 'P')
-			{
-				game->player.x = x;
-				game->player.y = y;
-				game->player.collec = 0;
-			}
-		}
+		movement(key, game);
 	}
-	game->move = 0;
+	else if (key == XK_Escape)
+	 	close_game(game);
+	return (0);
 }

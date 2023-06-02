@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:12:46 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 14:49:31 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/02 18:03:37 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ void	annexe_parsing(t_game *game)
 
 	modif = 1;
 	while (modif)
-		modif = repandre(game->map->mat);
-	if (check_3(game->map->mat))
+		modif = repandre(game->map.mat);
+	if (check_3(game->map.mat))
 		exit(ft_printf("Error : Pas de solution possible\n"));
-	reset(game->map->mat);
+	reset(game->map.mat);
 }

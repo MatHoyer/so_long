@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 12:53:47 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 14:48:50 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/02 18:49:30 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,13 @@ typedef struct game {
 	void		*win;
 	int			move;
 	char		mem;
-	t_map		*map;
-	t_texture	*texture;
-	t_player	*player;
+	t_map		map;
+	t_texture	texture;
+	t_player	player;
 }	t_game;
 
 void	new_matrix(char *file, t_map *map);
+void	modif_matrix(t_map *map);
 
 void	parsing(t_game *game);
 void	annexe_parsing(t_game *game);
@@ -73,11 +74,13 @@ void	print_background(t_game *game);
 void	update_texture(t_game *game);
 void	print_data(t_game *game);
 
+int		check_input(int key, t_game *game);
 void	movement(int key, t_game *game);
 void	animation(int key, t_game *game);
 
 void	do_case(t_game *game);
 
+int		close_game(t_game *game);
 void	error(int state, char *error_str, t_game *game);
 
 #endif

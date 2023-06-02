@@ -1,6 +1,6 @@
 CC = cc
 
-CFLAGS = -I. -MMD
+CFLAGS = -I. -MMD -g3
 
 SRC_PATH = sources/
 
@@ -8,11 +8,13 @@ OBJS_PATH = obj/
 
 SRC = animation.c \
 	annexe_parsing.c \
+	check_input.c \
 	do_case.c \
 	error.c \
 	init_player.c \
 	init_texture.c \
 	main.c \
+	modif_matrix.c \
 	movement.c \
 	new_matrix.c \
 	parsing.c \
