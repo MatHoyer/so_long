@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   do_case.c                                          :+:      :+:    :+:   */
+/*   annexe_parsing2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 13:14:45 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 12:05:28 by mhoyer           ###   ########.fr       */
+/*   Created: 2023/06/05 14:37:05 by mhoyer            #+#    #+#             */
+/*   Updated: 2023/06/05 14:46:37 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	do_case(t_game *game)
+int	modif_case(int x, int y, char **map)
 {
-	update_case(game, game->player.x, game->player.y);
-	if (game->mem == 'C')
-	{
-		game->mem = '0';
-		game->player.collec++;
-	}
-	else if (game->mem == 'E')
-	{
-		if (game->map.collectible == game->player.collec)
-		{
-			ft_printf("Bravo, vous avez reussit en %d mouvements !\n",
-				game->move);
-			close_game(game);
-		}
-		else
-		{
-			print_data(game);
-		}
-	}
+	if (map[y][x] == '0')
+		map[y][x] = '3';
+	else if (map[y][x] == 'C')
+		map[y][x] = '4';
+	else if (map[y][x] == 'E')
+		map[y][x] = '5';
+	return (1);
 }

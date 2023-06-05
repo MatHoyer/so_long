@@ -6,11 +6,11 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:12:12 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 17:55:28 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 08:57:12 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 char	**alloc_matrice(t_list *lst)
 {

@@ -6,11 +6,11 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:14:53 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 18:58:33 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 14:25:47 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	close_game(t_game *game)
 {
@@ -25,7 +25,7 @@ void	error(int state, char *error_str, t_game *game)
 	while (game->map.mat[++i])
 		free(game->map.mat[i]);
 	free(game->map.mat);
-	if (state > 0 && error_str[0] != 'f')
+	if (error_str[0] != 'f')
 	{
 		ft_printf("Error : %s.\n", error_str);
 	}
@@ -37,14 +37,11 @@ void	error(int state, char *error_str, t_game *game)
 		mlx_destroy_image(game->mlx, game->texture.obs.img);
 		mlx_destroy_image(game->mlx, game->texture.vide.img);
 		mlx_destroy_image(game->mlx, game->texture.sortie.img);
-		while (++i < 9)
+		while (++i < ANIM)
 			mlx_destroy_image(game->mlx, game->texture.perso[i].img);
 		mlx_destroy_window(game->mlx, game->win);
 		mlx_destroy_display(game->mlx);
-	}
-	else if (state < 0)
-	{
-		ft_printf("Bravo, vous avez reussi en %d mouvements.\n", game->move);
+		free(game->mlx);
 	}
 	exit (0);
 }

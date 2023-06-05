@@ -6,11 +6,11 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 18:35:40 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 18:56:53 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 08:55:33 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	check_input(int key, t_game *game)
 {

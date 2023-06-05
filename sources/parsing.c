@@ -6,11 +6,11 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:12:29 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 18:08:03 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 14:24:35 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	error_check_contenue(t_game *game)
 {

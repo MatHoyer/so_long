@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 12:53:47 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 18:49:30 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 14:49:33 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <X11/X.h>
 
 # include "libft/libft.h"
+
+# define ANIM 4
 
 typedef struct image {
 	void	*img;
@@ -38,6 +40,8 @@ typedef struct texture
 typedef struct player {
 	int	x;
 	int	y;
+	int	nb_img;
+	int	updown;
 	int	collec;
 }	t_player;
 
@@ -56,6 +60,7 @@ typedef struct game {
 	void		*win;
 	int			move;
 	char		mem;
+	int			temps;
 	t_map		map;
 	t_texture	texture;
 	t_player	player;
@@ -65,18 +70,21 @@ void	new_matrix(char *file, t_map *map);
 void	modif_matrix(t_map *map);
 
 void	parsing(t_game *game);
+int		modif_case(int x, int y, char **map);
 void	annexe_parsing(t_game *game);
 
 void	init_texture(t_game *game);
 void	init_player(t_game *game);
 
+void	affiche_rect_top(t_game *game, int start, int x_max, int y_start);
 void	print_background(t_game *game);
-void	update_texture(t_game *game);
+void    update_case(t_game *game, int x, int y);
+void	update_texture(t_game *game, int want_x, int want_y);
 void	print_data(t_game *game);
 
 int		check_input(int key, t_game *game);
 void	movement(int key, t_game *game);
-void	animation(int key, t_game *game);
+void	animation(int depl, t_game *game);
 
 void	do_case(t_game *game);
 

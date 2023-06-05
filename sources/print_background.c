@@ -6,11 +6,11 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:13:42 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 18:18:29 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 08:57:20 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	affiche_texture_annexe(t_game *game, int i, int j)
 {

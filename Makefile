@@ -8,6 +8,7 @@ OBJS_PATH = obj/
 
 SRC = animation.c \
 	annexe_parsing.c \
+	annexe_parsing2.c \
 	check_input.c \
 	do_case.c \
 	error.c \

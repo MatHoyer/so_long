@@ -6,11 +6,11 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:15:38 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 18:59:33 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 14:23:21 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	check_file_name(char *file)
 {
@@ -36,10 +36,21 @@ void	parsing_arg(int ac, char *av)
 	check_file_name(av);
 }
 
+int	loop(t_game *game)
+{
+	game->temps++;
+	if (game->temps == 10000)
+	{
+		update_case(game, game->player.x, game->player.y);
+		game->temps = 0;
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_game	game;
 
+	game.temps = 0;
 	parsing_arg(ac, av[1]);
 	new_matrix(av[1], &game.map);
 	parsing(&game);
@@ -51,7 +62,8 @@ int	main(int ac, char **av)
 	init_texture(&game);
 	print_background(&game);
 	print_data(&game);
-	mlx_hook(game.win, KeyRelease, KeyReleaseMask, &check_input, &game);
+	mlx_loop_hook(game.mlx, &loop, &game);
+	mlx_hook(game.win, KeyPress, KeyPressMask, &check_input, &game);
 	mlx_hook(game.win, 17, 0, &close_game, &game);
 	mlx_loop(game.mlx);
 	return (0);

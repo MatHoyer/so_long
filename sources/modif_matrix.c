@@ -6,11 +6,11 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 17:54:41 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 17:55:43 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 08:57:04 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 
 void	modif_matrix(t_map *map)

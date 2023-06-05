@@ -6,11 +6,11 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:13:15 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/02 18:20:43 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 13:47:23 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	init_player(t_game *game)
 {
@@ -31,5 +31,7 @@ void	init_player(t_game *game)
 			}
 		}
 	}
+	game->player.nb_img = 0;
+	game->player.updown = 1;
 	game->move = 0;
 }
