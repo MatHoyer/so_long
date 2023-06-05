@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:12:46 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 14:52:08 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:07:38 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	repandre(char **map)
 		j = -1;
 		while (map[i][++j])
 		{
-			if ((map[i][j] == '0' || map[i][j] == 'C')
+			if ((map[i][j] == '0' || map[i][j] == 'C' || map[i][j] == 'E')
 				&& (check_p3(map[i + 1][j])
 				|| check_p3(map[i - 1][j]) || check_p3(map[i][j + 1])
 				|| check_p3(map[i][j - 1])))
