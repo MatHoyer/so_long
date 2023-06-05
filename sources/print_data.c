@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:14:16 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 12:09:56 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:28:09 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	affiche_rect_top(t_game *game, int start, int x_max, int y_start)
 void	msg_portail(t_game *game)
 {
 	affiche_rect_top(game, 50, 300, (50 * (game->map.y_max - 1)));
-			mlx_string_put(game->mlx, game->win, 60,
-				(50 * (game->map.y_max - 1)) + 10, 0xFFFFFFFF,
-				"Pas assez de gap pour passer le portail");
+	mlx_string_put(game->mlx, game->win, 60,
+		(50 * (game->map.y_max - 1)) + 10, 0xFFFFFFFF,
+		"Pas assez de gap pour passer le portail");
 }
 
 void	msg_rmv(t_game *game)
@@ -47,18 +47,18 @@ void	msg_rmv(t_game *game)
 	update_case(game, 5, game->map.y_max - 1);
 }
 
-void    print_data(t_game *game)
+void	print_data(t_game *game)
 {
 	char	*move;
 	char	*collec;
 	char	*all_collec;
-	
+
 	move = ft_itoa(game->move);
 	collec = ft_itoa(game->player.collec);
 	all_collec = ft_itoa(game->map.collectible);
 	if (!move || !collec || !all_collec)
 		error(2, "Mauvaise allocation des donnees du joueur (aff)", game);
-    affiche_rect_top(game, 0, 160, 0);
+	affiche_rect_top(game, 0, 160, 0);
 	affiche_rect_top(game, 0, 100, 20);
 	mlx_string_put(game->mlx, game->win, 10, 10, 0xFFFFFFFF,
 		"nbr de mouvements :");

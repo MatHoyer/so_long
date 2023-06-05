@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:14:00 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 13:50:13 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:29:01 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	update_player(t_game *game, int x, int y)
 	}
 }
 
-void    update_case(t_game *game, int x, int y)
+void	update_case(t_game *game, int x, int y)
 {
 	if (game->map.mat[y][x] == 'P')
 	{
@@ -30,9 +30,9 @@ void    update_case(t_game *game, int x, int y)
 			game->texture.perso[game->player.nb_img].img, x * 50, y * 50);
 		update_player(game, x, y);
 	}
-    else if (game->map.mat[y][x] == '0')
+	else if (game->map.mat[y][x] == '0')
 		mlx_put_image_to_window(game->mlx, game->win,
-		    game->texture.vide.img, x * 50, y * 50);
+			game->texture.vide.img, x * 50, y * 50);
 	else if (game->map.mat[y][x] == '1')
 		mlx_put_image_to_window(game->mlx, game->win,
 			game->texture.obs.img, x * 50, y * 50);
@@ -47,7 +47,7 @@ void    update_case(t_game *game, int x, int y)
 			game->texture.sortie.img, x * 50, y * 50);
 }
 
-void    update_texture(t_game *game, int prec_x, int prec_y)
+void	update_texture(t_game *game, int prec_x, int prec_y)
 {
 	update_case(game, prec_x, prec_y);
 	update_case(game, game->player.x, game->player.y);

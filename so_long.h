@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 12:53:47 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 14:49:33 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:25:27 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	init_player(t_game *game);
 
 void	affiche_rect_top(t_game *game, int start, int x_max, int y_start);
 void	print_background(t_game *game);
-void    update_case(t_game *game, int x, int y);
+void	update_case(t_game *game, int x, int y);
 void	update_texture(t_game *game, int want_x, int want_y);
 void	print_data(t_game *game);
 

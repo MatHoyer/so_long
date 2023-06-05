@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 18:35:40 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 08:55:33 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:27:03 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int	check_input(int key, t_game *game)
 		movement(key, game);
 	}
 	else if (key == XK_Escape)
-	 	close_game(game);
+		close_game(game);
 	return (0);
 }

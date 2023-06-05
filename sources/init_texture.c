@@ -6,16 +6,11 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:13:02 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 13:53:52 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:26:29 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	init_texture_annexe(t_game *game)
-{
-	
-}
 
 void	init_texture_perso(t_game *game)
 {
@@ -32,12 +27,11 @@ void	init_texture_perso(t_game *game)
 		free(tmp);
 		path = ft_strjoin("texture_xpm/perso/perso", ext);
 		game->texture.perso[i].img = mlx_xpm_file_to_image(game->mlx,
-			path,
-			&game->texture.perso[i].largeur, &game->texture.perso[i].hauteur);
+				path, &game->texture.perso[i].largeur,
+				&game->texture.perso[i].hauteur);
 		free(ext);
 		free(path);
 	}
-	init_texture_annexe(game);
 }
 
 void	init_texture(t_game *game)
