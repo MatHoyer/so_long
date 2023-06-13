@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:15:38 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 14:23:21 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/13 08:33:49 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	loop(t_game *game)
 		update_case(game, game->player.x, game->player.y);
 		game->temps = 0;
 	}
+	return (0);
 }
 
 int	main(int ac, char **av)
