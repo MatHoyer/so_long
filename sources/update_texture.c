@@ -6,13 +6,13 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:14:00 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 15:29:01 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/14 08:14:34 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	update_player(t_game *game, int x, int y)
+void	update_player(t_game *game)
 {
 	game->player.nb_img += game->player.updown;
 	if (game->player.nb_img == ANIM || game->player.nb_img == -1)
@@ -28,7 +28,7 @@ void	update_case(t_game *game, int x, int y)
 	{
 		mlx_put_image_to_window(game->mlx, game->win,
 			game->texture.perso[game->player.nb_img].img, x * 50, y * 50);
-		update_player(game, x, y);
+		update_player(game);
 	}
 	else if (game->map.mat[y][x] == '0')
 		mlx_put_image_to_window(game->mlx, game->win,

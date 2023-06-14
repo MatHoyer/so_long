@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:14:26 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 14:32:50 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/14 08:13:28 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	movement(int key, t_game *game)
 {
 	int	check_move;
 
+	check_move = 0;
 	if (key == XK_w)
 		check_move = move_top(game);
 	else if (key == XK_s)

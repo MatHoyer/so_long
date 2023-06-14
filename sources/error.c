@@ -6,7 +6,7 @@
 /*   By: mhoyer <mhoyer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 13:14:53 by mhoyer            #+#    #+#             */
-/*   Updated: 2023/06/05 14:25:47 by mhoyer           ###   ########.fr       */
+/*   Updated: 2023/06/14 08:10:09 by mhoyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	close_game(t_game *game)
 {
 	error(2, "fermeture propre", game);
+	return (0);
 }
 
 void	error(int state, char *error_str, t_game *game)

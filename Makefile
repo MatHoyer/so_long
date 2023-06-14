@@ -1,6 +1,6 @@
 CC = cc
 
-CFLAGS = -I. -MMD -g3
+CFLAGS = -Wall -Wextra -Werror -I. -MMD -g3
 
 SRC_PATH = sources/
 
